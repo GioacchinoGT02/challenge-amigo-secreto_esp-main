@@ -23,16 +23,18 @@ function agregarAmigo(){
         alert("Introduzca un valor valido");
     };
 }
-
+//funcion que sorteará un amigo de la lista, se ejecuta al presionar "Sortear amigo"
 function sortearAmigo(){
+    //se guarda la longitud del array listaAmigos
     cantidadAmigos=listaAmigos.length
+    //condicional para la verificacion del tamaño de la lista
     if (cantidadAmigos>0){
-    aleatorio=Math.floor((Math.random())*cantidadAmigos)
-    console.log(aleatorio)
-     document.getElementById('listaAmigos').innerHTML = "El amigo secreto sorteado es: " +listaAmigos[aleatorio]
-     document.getElementById('listaAmigos').style.color="green"
-     document.getElementById('listaAmigos').style.fontWeight = 'bold';
+        //si la lista tiene mas de 0 elementos:se guarda el valor aleatorio generado 
+        aleatorio=Math.floor((Math.random())*cantidadAmigos)
+        //se muestra el resultado de la eleccion
+        document.getElementById('resultado').innerHTML = "El amigo secreto sorteado es: " +listaAmigos[aleatorio]
     }
+    //si la lista tiene 0 elementos, muestra la alerta de agregar amigos
     else{alert("Agregue amigos al sorteo")}
 
 }
